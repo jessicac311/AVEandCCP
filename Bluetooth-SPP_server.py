@@ -42,12 +42,15 @@ while(connection == False):
                             
                             # Receive data back from AVE:
                             data = client_sock.recv(1024)
-                            lat,lon=data.split()
+                            stop,lon,lat,errcount=data.split(",")
           
+                        
                             
-                            
-                            print("Received Latitude: %s" % lat)
+                            print("Stopwatch: %s" % stop)
                             print("Received Longitude: %s" % lon)
+                            print("Received Latitude: %s" % lat)
+                            print("Error Count: %s" % errcount)
+
                     
                                     
                                     # data = client_sock.recv(1024)
